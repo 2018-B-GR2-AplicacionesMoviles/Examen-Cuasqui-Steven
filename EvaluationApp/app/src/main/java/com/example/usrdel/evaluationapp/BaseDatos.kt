@@ -1,22 +1,31 @@
 package com.example.usrdel.evaluationapp
 
+import android.os.Parcelable
 import android.util.Log
 
 class BaseDatos{
     companion object {
         var ListaPerros:ArrayList<Perro> = ArrayList()
 
-        fun agregarPerro(nombre:String, raza:String, tamano:String,fertilidad:String,sexo:String){
-            var perro = Perro(nombre,raza,tamano,fertilidad,sexo)
+        fun agregarPerro(perro:Perro){
             ListaPerros.add(perro)
 
 
         }
-
+        fun imprimirBase():ArrayList<Perro>{
+            return ListaPerros
+        }
+        fun eliminarPerro(nombre:String){
+            for (i in ListaPerros.indices) {
+                if(ListaPerros[i].nombre.equals(nombre)){
+                    ListaPerros.removeAt(i)
+                }
+            }
+        }
 
     }
-}
 
-class Perro(nombre:String, raza:String, tamano:String,fertilidad:String,sexo:String){
 
 }
+
+
