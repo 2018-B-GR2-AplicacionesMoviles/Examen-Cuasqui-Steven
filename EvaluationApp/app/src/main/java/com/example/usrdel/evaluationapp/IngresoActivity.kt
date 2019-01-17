@@ -33,29 +33,27 @@ class IngresoActivity : AppCompatActivity() {
     }
 
     fun mostrarDatos(){
-        Log.i("MOSTRAR", BaseDatos.imprimirBase().toString())
-        //println(BaseDatos.imprimirBase())
+        val intent= Intent(this,ListActivity::class.java)
+        startActivity(intent)
 
     }
 
     fun ingresoPerro(){
         var nombre:String = editText_nombre.text.toString()
-        var raza = editText_raza.text.toString()
-        var tamano = editText_tamano.text.toString()
-        var fertilidad = editText_fert.text.toString()
-        var sexo = editText_sexo.text.toString()
+        var apellido = editText_raza.text.toString()
 
-        val perrito= Perro(nombre=nombre,raza=raza,tamano=tamano,fertilidad=fertilidad,sexo=sexo)
-        BaseDatos.agregarPerro(perrito)
+        val nUsuario= Usuario(id="1",nombre_usuario= editText_nombre.text.toString(),apellido=editText_raza.text.toString())
+        var base = SQLite(this)
+        base.crearUsuarioFormulario(nUsuario)
+        Log.i("BDD","Usuario creado con éxito")
+
         limpiar()
     }
 
     fun limpiar(){
         editText_nombre.text.clear()
         editText_raza.text.clear()
-        editText_tamano.text.clear()
-        editText_fert.text.clear()
-        editText_sexo.text.clear()
+
     }
 
 }

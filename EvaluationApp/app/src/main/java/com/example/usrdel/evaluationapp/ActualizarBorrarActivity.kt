@@ -12,15 +12,13 @@ class ActualizarBorrarActivity : AppCompatActivity() {
         val Perropasado = intent.getParcelableExtra<Perro>("Perro")
         editText_nombreperro.setText(Perropasado.nombre.toString())
         editText_razaperro.setText(Perropasado.raza.toString())
-        editText_tamanoperro.setText(Perropasado.tamano.toString())
-        editText_fertperro.setText(Perropasado.fertilidad.toString())
-        editText_sexoperro.setText(Perropasado.sexo.toString())
+
         button_borrar.setOnClickListener { eliminar() }
 
 
     }
 
     fun eliminar(){
-        BaseDatos.eliminarPerro(editText_nombreperro.text.toString())
+        //BaseDatos.eliminarPerro(editText_nombreperro.text.toString())
     }
 }

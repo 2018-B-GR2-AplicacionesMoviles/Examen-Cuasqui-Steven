@@ -1,5 +1,6 @@
 package com.example.usrdel.evaluationapp
 
+import android.app.ListActivity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun irPantallaLista(){
-        val intentIrABotones = Intent(this , ListActivity::class.java)
-        this.startActivity(intentIrABotones)
+        val intentIrALista = Intent(this , ListActivity::class.java)
+        this.startActivity(intentIrALista)
     }
 
 }
